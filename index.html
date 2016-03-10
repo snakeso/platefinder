@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 </head>
 
-<body>
+<body ng-app>
 
 	
 	<div class="intro-header container">
 		
 		<h1>Plate Finder</h1>
 		
-		<div class="check-numberplates">
+		<div class="check-numberplates" ng-controller="SearchController">
 
           <div class="enter-numberplates enter-numberplates-width">
               <div class="numberplates-city">
@@ -28,12 +28,21 @@
                   <input type="text" placeholder="1234" name="msg_kennung2" maxlength="4">
               </div>
           </div>
-          <div class="search-numberplates"><a href=""><img class="search-numberplates-width" alt="search-numberplates" src="img/search.png"></a></div>
-
+		  
+		  <div class="search-numberplates">
+			<a href="" ng-click="searchByCarPlate()"><img class="search-numberplates-width" alt="search-numberplates" src="img/search.png"></a>
+		  </div>
+		  
           <div class="clearfix"></div>
 
+		  <p>{{ result }}</p>
+		  
 		</div>
 		
 	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	
 </body>
 </html>
